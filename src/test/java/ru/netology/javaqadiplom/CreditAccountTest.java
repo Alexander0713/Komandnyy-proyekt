@@ -21,7 +21,7 @@ public class CreditAccountTest {
     }
     @Test
 
-    void shouldNotPayWhenAmountExceedsCreditLimit() {
+    public void shouldNotPayWhenAmountExceedsCreditLimit() {
 
 // Создаем счет с балансом 1000 и кредитным лимитом 5000
         CreditAccount account = new CreditAccount(1000, 5000, 15);
@@ -35,7 +35,7 @@ public class CreditAccountTest {
         assertEquals(1000, account.getBalance());
     }
     @Test
-    void shouldAddAmountToBalance() {
+    public void shouldAddAmountToBalance() {
         CreditAccount account = new CreditAccount(1000, 5000, 15);
 
         boolean result = account.add(500);
@@ -44,6 +44,22 @@ public class CreditAccountTest {
         assertEquals(1500, account.getBalance());
     }
 
+    @Test
+    public void shouldCalculateYearChangeForNegativeBalance() {
+        CreditAccount account = new CreditAccount(0, 5000, 15);
+        account.pay(150);
+
+        int yearChange = account.yearChange();
+
+        assertEquals(-22, yearChange);
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenCreditLimitNegative() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new CreditAccount(1000, -5000, 15);
+        });
+    }
 
 }
 

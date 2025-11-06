@@ -42,8 +42,6 @@ https://github.com/Alexander0713/Komandnyy-proyekt/blob/7e01d1602ba0e7787782ab0a
 
 ![alt text](image-1.png)
 
-
-
 # Окружение
 * **Устройство:** ПК
 * **Операционная система:** Windows 11,
