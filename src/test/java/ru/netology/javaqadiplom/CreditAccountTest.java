@@ -57,17 +57,41 @@ public class CreditAccountTest {
     @Test
     public void shouldThrowExceptionWhenCreditLimitNegative() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new CreditAccount(1000, -5000, 15);
+            new CreditAccount(-1000, 5000, 15);
         });
     }
+
     @Test
     void shouldPayCorrectlyWithinCreditLimit() {
         CreditAccount account = new CreditAccount(1000, 5000, 15);
 
-        boolean result = account.pay(1000);
+        boolean result = account.pay(6000);
 
         assertTrue(result);
         assertEquals(0, account.getBalance());
+    }
+    @Test
+    public void shouldNotCreateAccountWithNegativeCreditLimit() {
+        // Пытаемся создать счет с отрицательным кредитным лимитом
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> new CreditAccount(1000, -5000, 15));
+    }
+    @Test
+    public void shouldCorrectlySubtractAmountFromBalance() {
+        CreditAccount account = new CreditAccount(1000, 5000, 15);
+        assertTrue(account.pay(500));
+        assertEquals(500, account.getBalance()); // 1000 - 500 = 500
+    }
+    @Test
+    public void shouldReturnZeroForPositiveBalance() {
+        CreditAccount account = new CreditAccount(5000, 10000, 15);
+        assertEquals(0, account.yearChange());
+    }
+    @Test
+    public void shouldCreateAccountWithZeroInterestRate() {
+        // Нулевая ставка должна быть разрешена
+        Assertions.assertDoesNotThrow(() ->
+                new CreditAccount(1000, 5000, 0));
     }
 }
 
