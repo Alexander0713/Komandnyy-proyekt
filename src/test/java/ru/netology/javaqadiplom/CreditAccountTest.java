@@ -60,6 +60,14 @@ public class CreditAccountTest {
             new CreditAccount(1000, -5000, 15);
         });
     }
+    @Test
+    void shouldPayCorrectlyWithinCreditLimit() {
+        CreditAccount account = new CreditAccount(1000, 5000, 15);
 
+        boolean result = account.pay(1000);
+
+        assertTrue(result);
+        assertEquals(0, account.getBalance());
+    }
 }
 

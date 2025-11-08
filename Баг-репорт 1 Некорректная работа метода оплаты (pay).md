@@ -2,7 +2,7 @@
 При выполнении операции оплаты баланс изменяется до проверки кредитного лимита.
 # Локация дефекта:
         
-https://github.com/Alexander0713/Komandnyy-proyekt/blob/7e01d1602ba0e7787782ab0ac6d54e4d04a0db01/src/main/java/ru/netology/javaqadiplom/CreditAccount.java#L44-L49
+https://github.com/Alexander0713/Komandnyy-proyekt/blob/f2dbb2d1978b0270423be66de7734c22d4d6c416/src/main/java/ru/netology/javaqadiplom/CreditAccount.java#L44-L49
 
 # Шаги воспроизведения:
 
