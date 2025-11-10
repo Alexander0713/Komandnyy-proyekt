@@ -68,7 +68,7 @@ public class CreditAccountTest {
         boolean result = account.pay(6000);
 
         assertTrue(result);
-        assertEquals(0, account.getBalance());
+        assertEquals(-5000, account.getBalance());
     }
     @Test
     public void shouldNotCreateAccountWithNegativeCreditLimit() {
