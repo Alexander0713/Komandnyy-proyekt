@@ -36,7 +36,8 @@ Account from = new SavingAccount(1000, 500, 10000, 5)
 
 # Скриншот:
 
-![alt text](image-4.png)
+<img width="1762" height="1019" alt="image" src="https://github.com/user-attachments/assets/88162385-658a-4828-b060-68d0fb5fdd9a" />
+
 
 
 
