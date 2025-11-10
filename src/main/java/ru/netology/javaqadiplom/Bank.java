@@ -17,9 +17,20 @@ public class Bank {
         if (amount <= 0) {
             return false;
         }
-        if (from.pay(amount)) {
-            to.add(amount);
+
+        // Пытаемся списать средства
+        if (!from.pay(amount)) {
+            return false;  // Списание не удалось
         }
+
+        // Пытаемся зачислить средства
+        if (!to.add(amount)) {
+            // КОМПЕНСАЦИЯ: возвращаем деньги при ошибке зачисления
+            from.add(amount);
+            return false;
+        }
+
+        // Обе операции успешны
         return true;
     }
 }
