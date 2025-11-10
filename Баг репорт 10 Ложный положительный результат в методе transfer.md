@@ -25,7 +25,7 @@ Account from = new SavingAccount(1000, 500, 10000, 5)
 
   
     @Test
-    void shouldReturnFalseWhenPayFails() {
+    public void shouldReturnFalseWhenPayFails() {
     Account from = new SavingAccount(1000, 500, 10000, 5);
     Account to = new CreditAccount(0, 5000, 5);
     int amount = 2000; // ССумма, при списании которой баланс упадёт ниже minBalance (500)
@@ -36,6 +36,11 @@ Account from = new SavingAccount(1000, 500, 10000, 5)
 
 # Скриншот:
 
+<<<<<<< HEAD
+=======
+<img width="1762" height="1019" alt="image" src="https://github.com/user-attachments/assets/88162385-658a-4828-b060-68d0fb5fdd9a" />
+
+>>>>>>> 5d6309d12d165b92586d0e9a7d16c28e636895ac
 
 <img width="1762" height="1019" alt="image" src="https://github.com/user-attachments/assets/88162385-658a-4828-b060-68d0fb5fdd9a" />
 
