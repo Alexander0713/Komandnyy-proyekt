@@ -25,9 +25,25 @@ class BankTest {
         Account to = new CreditAccount(0, 5000, 5);
         int amount = 2000; // Нарушает minBalance
         boolean result = bank.transfer(from, to, amount);
-        
+
         assertFalse(result); // Должен вернуть false
         assertEquals(1000, from.getBalance()); // Баланс не должен измениться
         assertEquals(0, to.getBalance()); // Баланс не должен измениться
     }
-}
+    @Test
+    void shouldRollbackWhenAddFails() {
+        Account from = new SavingAccount(1000, 0, 2000, 5);
+        Account to = new CreditAccount(0, 1000, 5) {
+            @Override
+            public boolean add(int amount) {
+                return false;
+            }
+        };
+        int amount = 500;
+
+        boolean result = bank.transfer(from, to, amount);
+
+        assertFalse(result);
+        assertEquals(1000, from.getBalance());
+    }
+   }
