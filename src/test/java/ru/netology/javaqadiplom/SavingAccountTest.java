@@ -18,8 +18,6 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(2_000 + 3_000, account.getBalance());
     }
-<<<<<<< Updated upstream
-=======
 
     @Test
     public void shouldNotChangeBalanceWhenPaymentExceedsMinBalance() {
