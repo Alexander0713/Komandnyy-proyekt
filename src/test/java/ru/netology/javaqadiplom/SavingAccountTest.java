@@ -76,5 +76,4 @@ public class SavingAccountTest {
 
         Assertions.assertTrue(exception.getMessage().contains("больше максимального баланса"));
     }
->>>>>>> Stashed changes
 }
