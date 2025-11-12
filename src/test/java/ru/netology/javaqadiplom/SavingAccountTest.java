@@ -18,9 +18,6 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(2_000 + 3_000, account.getBalance());
     }
-<<<<<<< HEAD
-  
-=======
 
     @Test
     public void shouldNotChangeBalanceWhenPaymentExceedsMinBalance() {
@@ -79,5 +76,5 @@ public class SavingAccountTest {
 
         Assertions.assertTrue(exception.getMessage().contains("больше максимального баланса"));
     }
->>>>>>> 397b742860518fd6e3f6c67854ba606e51dce6f6
+
 }
