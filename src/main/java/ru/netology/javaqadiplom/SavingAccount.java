@@ -46,11 +46,14 @@ public class SavingAccount extends Account {
                     "Начальный баланс не может быть меньше минимального баланса"
             );
         }
+<<<<<<< HEAD
         if (minBalance < 0) {
             throw new IllegalArgumentException(
                     "Минимальный баланс не может быть отрицательным, а у вас: " + minBalance
             );
         }
+=======
+>>>>>>> 397b742860518fd6e3f6c67854ba606e51dce6f6
 
 
         this.balance = initialBalance;
