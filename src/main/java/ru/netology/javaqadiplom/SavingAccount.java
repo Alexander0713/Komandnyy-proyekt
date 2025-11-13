@@ -41,11 +41,6 @@ public class SavingAccount extends Account {
                     "Начальный баланс не может быть меньше минимального баланса"
             );
         }
-        if (initialBalance > maxBalance) {
-            throw new IllegalArgumentException(
-                    "Начальный баланс не может быть больше максимального баланса"
-            );
-        }
         if (minBalance < 0) {
             throw new IllegalArgumentException(
                     "Минимальный баланс не может быть отрицательным, а у вас: " + minBalance
